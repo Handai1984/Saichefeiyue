@@ -8,7 +8,7 @@ public class GM : MonoBehaviour
 
 	public static  GM instante;
 	public bool isGameOver;
-	public SpriteRenderer mapColor;
+
 	//获取地图的render
 	private Color mcolor;
 	public Transform car;
@@ -45,7 +45,7 @@ public class GM : MonoBehaviour
 
 		
 		
-		StartColor ();
+	
 		ShowScore ();
 	}
 	
@@ -53,16 +53,6 @@ public class GM : MonoBehaviour
 	/// <summary>
 	/// 改变游戏地图和背景颜色
 	/// </summary>
-	private void StartColor ()
-	{
-		mcolor = new Color (Random.Range (0, 256) / 255f, Random.Range (0, 256) / 255f, Random.Range (0, 256) / 255f);
-		mapColor.color = mcolor;
-
-		mcolor = new Color (Random.Range (0, 256) / 255f, Random.Range (0, 256) / 255f, Random.Range (0, 256) / 255f);
-		Camera.main.backgroundColor = mcolor;
-
-        
-	}
 
 
 	public void GameStart ()
@@ -70,7 +60,7 @@ public class GM : MonoBehaviour
 		//游戏开始
 		car.position = this.transform.position;
 		isGameOver = false;
-		win.SetActive (false);
+
 		start.SetActive (false);
 
 	}
@@ -78,7 +68,7 @@ public class GM : MonoBehaviour
 	public void ReStart ()
 	{
 		car.gameObject.SetActive (true);
-		StartColor ();//游戏开始地图和背景颜色
+		win.SetActive (false);
 		car.position = this.transform.position;
 		car.rotation = this.transform.rotation;
 		isGameOver = false;

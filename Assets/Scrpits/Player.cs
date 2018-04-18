@@ -60,18 +60,21 @@ public class Player : MonoBehaviour {
             GM.instante.reStart.SetActive(true);
             GM.instante.highScoreText.gameObject.SetActive(true);
             GM.instante.ShowHihgScore();
-
+			GoogleGM.googlegm.GADInterstitalShow ();
 
             this.gameObject.SetActive(false);
         }
 
-		if (collision.gameObject.CompareTag ("Win")) {
+		if (collision.gameObject.CompareTag ("win")) {
 			GM.instante.isGameOver = true;
-			GM.instante.win.SetActive (true);
+			GM.instante.reStart.SetActive(true);
 			GM.instante.highScoreText.gameObject.SetActive(true);
 			GM.instante.ShowHihgScore();
-		
-//			GM.instante.GameStart ();
+			GM.instante.win.SetActive (true);
+
+			this.gameObject.SetActive(false);
 		}
+
+
     }
 }
